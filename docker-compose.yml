@@ -1,0 +1,23 @@
+version: "2.1"
+services:
+
+  oracle:
+    image: epiclabs/docker-oracle-xe-11g
+    container_name: oracle
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
+      - RELAX_SECURITY=1
+      - ORACLE_PASSWORD=oracle
+    ports:
+      - 8085:8080
+      - 1521:1521
+    volumes:
+      - oracle_data:/u01/app/oracle:Z
+      
+    ### USERNAME: system
+    ### PASSWORD: oracle
+    ### URL: jdbc:oracle:thin:@//192.168.99.100:1521/xe
+
+volumes:
+  oracle_data:
+    driver: local

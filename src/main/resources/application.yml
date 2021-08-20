@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: mc-atendimento
+  profiles:
+    active: local
+
+server:
+  port: 8030
+
+# logging
+logging:
+  level:
+    root: INFO
+
+minha-conta:
+  datasource:
+    driverClassName: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@//192.168.99.103:1521/xe
+    jdbcUrl: jdbc:oracle:thin:@//192.168.99.103:1521/xe
+    username: system
+    password: oracle
+    connectionTimeout: 3000
+    minimumIdle: 5
+    maximumPoolSize: 25
+    idleTimeout: 600000
+    maxLifetime: 1800000

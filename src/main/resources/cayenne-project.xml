@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<domain xmlns="http://cayenne.apache.org/schema/10/domain"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://cayenne.apache.org/schema/10/domain https://cayenne.apache.org/schema/10/domain.xsd"
+	 project-version="10">
+	<map name="DBminhaconta"/>
+	<node name="datanodeMINHACONTA"
+		 factory="org.apache.cayenne.configuration.server.XMLPoolingDataSourceFactory"
+		 schema-update-strategy="org.apache.cayenne.access.dbsync.SkipSchemaUpdateStrategy">
+		<map-ref name="DBminhaconta"/>
+		<data-source>
+			<driver value="oracle.jdbc.OracleDriver"/>
+			<url value="jdbc:oracle:thin:@//192.168.99.103:1521/xe"/>
+			<connectionPool min="1" max="25"/>
+			<login userName="system" password="oracle"/>
+		</data-source>
+	</node>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="project.graph.xml"/>
+</domain>
